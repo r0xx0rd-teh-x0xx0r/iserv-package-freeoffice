@@ -1,0 +1,11 @@
+[Product]
+type: localboot
+id: onlyoffice
+name: Only-Office
+description: Only-Office Suite
+advice: 
+version: 7.4.1
+packageVersion: 1.0
+setupScript: install.ins
+uninstallScript: remove.ins
+internet: true

@@ -1,0 +1,30 @@
+[Initial]
+Message=Installiere Only-Office...
+DefVar $ExitCode$
+
+[Actions]
+ShowBitmap "%ScriptPath%\logo.png" "Only-Office"
+Files_Copy
+WinBatch_Setup
+Sub_HandleExitCode
+Files_Cleanup
+
+[Files_Copy]
+copy -se "%ScriptPath%\data\*" "%opsiTmpDir%\%installingProdName%\"
+
+[WinBatch_Setup]
+msiexec /passive /i "%opsiTmpDir%\%installingProdName%\setup.msi"
+
+[Sub_HandleExitCode]
+; check return code
+Set $ExitCode$ = GetLastExitCode
+comment "GetLastExitCode: " + $ExitCode$
+if not($ExitCode$ = "0" or $ExitCode$ = "3010")
+    ; 0    ERROR_SUCCESS
+    ; 3010 ERROR_SUCCESS_REBOOT_REQUIRED
+    LogError "Fatal: setup returned exit code " + $ExitCode$
+    IsFatalError
+endif
+
+[Files_Cleanup]
+delete -sf "%opsiTmpDir%\%installingProdName%\"

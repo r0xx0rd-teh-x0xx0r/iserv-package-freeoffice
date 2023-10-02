@@ -1,0 +1,23 @@
+[Initial]
+Message=Deinstalliere Only-Office...
+DefVar $ExitCode$
+
+[Actions]
+ShowBitmap "%ScriptPath%\logo.png" "Only-Office"
+WinBatch_Uninstall
+Sub_HandleExitCode
+
+[WinBatch_Uninstall]
+msiexec /passive /x "PATH"
+
+[Sub_HandleExitCode]
+; check return code
+Set $ExitCode$ = GetLastExitCode
+comment "GetLastExitCode: " + $ExitCode$
+if not($ExitCode$ = "0" or $ExitCode$ = "1605" or $ExitCode$ = "3010")
+    ; 0    ERROR_SUCCESS
+    ; 1605 ERROR_UNKNOWN_PRODUCT
+    ; 3010 ERROR_SUCCESS_REBOOT_REQUIRED
+    LogError "Fatal: setup returned exit code " + $ExitCode$
+    IsFatalError
+endif

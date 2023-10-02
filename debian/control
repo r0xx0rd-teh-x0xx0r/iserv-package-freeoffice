@@ -1,0 +1,20 @@
+Source: winst-onlyoffice
+Section: misc
+Priority: extra
+Maintainer: IServ <info@iserv.eu>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 3.9.8
+Homepage: http://iserv.eu/
+
+Package: winst-onlyoffice
+Architecture: all
+Xb-Private-Iserv-Revision: ${iserv:Revision}
+Depends: ${iserv:winst:Depends}
+Description: ${iserv:winst:Description}
+Tag: suite::iserv:deploy, role::package
+
+Package: winst-onlyoffice-data
+Architecture: all
+Xb-Private-Iserv-Revision: ${iserv:Revision}
+Depends: ${iserv:winst:Depends}
+Description: ${iserv:winst:Description}
