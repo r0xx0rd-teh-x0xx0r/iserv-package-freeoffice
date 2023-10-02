@@ -20,7 +20,7 @@ cd /srv/deploy/install/
 #### Git-repository klonen:
 
 ```
-git clone https://github.com/r0xx0rd-teh-x0xx0r/iserv-package-freeoffice.git onlyoffice
+git clone https://github.com/r0xx0rd-teh-x0xx0r/iserv-package-freeoffice.git freeoffice
 ```
 
 #### In das Verzeichnis gehen und die msi-datei mit git-lfs herunterladen:
