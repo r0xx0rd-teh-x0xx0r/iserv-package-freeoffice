@@ -3,7 +3,7 @@ type: localboot
 id: freeoffice
 name: FreeOffice
 description: FreeOffice Suite
-advice: 
+advice:
 version: 1066
 packageVersion: 1.0
 setupScript: install.ins
