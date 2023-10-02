@@ -4,7 +4,7 @@
 
 #### Voraussetzungen: 
 -  root Zugriff auf dem iServ Server
--  Git und git-lfs (git large file) müssen installiert sein, falls das nicht der Fall ist, müssen die Packete wie volg installiert werden:
+-  Git und git-lfs (git large file) müssen installiert sein, falls das nicht der Fall ist, müssen die Packete wie folgt installiert werden:
 
 ```
 apt-get install git git-lfs
